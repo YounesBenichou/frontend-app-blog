@@ -11,6 +11,11 @@ export const StyledNavItem = styled((props) => <ListItemButton disableGutters {.
   textTransform: 'capitalize',
   color: theme.palette.text.secondary,
   borderRadius: theme.shape.borderRadius,
+  textAlign: 'center',
+  fontFamily: 'Ubuntu',
+  fontSize: '16px',
+  fontStyle: 'normal',
+  fontWeight: '600',
 }));
 
 export const StyledNavItemIcon = styled(ListItemIcon)({
