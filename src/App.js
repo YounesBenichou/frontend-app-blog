@@ -2,30 +2,29 @@
 // components
 import { Switch, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
-
-
+import { useEffect } from "react";
 import ThemeProvider from "./theme";
 import ScrollToTop from "./components/scroll-to-top/ScrollToTop";
 import StyledChart from "./components/chart";
 // layouts
-import DashboardLayout from './layouts/dashboard';
-// Pages
-import BlogPage from './pages/BlogPage';
-import UserPage from './pages/UserPage';
-import LoginPage from './pages/LoginPage';
-import Page404 from './pages/Page404';
-import ProductsPage from './pages/GamificationPage';
-import DashboardAppPage from './pages/DashboardAppPage';
 
+import DashboardLayout from './layouts/dashboard';
+import {  getAuthenticatedUser} from '@edx/frontend-platform/auth';
+import { getConfig } from "@edx/frontend-platform";
 
 function App() {
-
+    useEffect(()=>{
+    if (!getAuthenticatedUser()){
+      window.open(getConfig().LMS_BASE_URL, '_self');
+      
+  }
+  },[])
   return (
     <BrowserRouter>
       <ThemeProvider>
         <ScrollToTop />
         <Switch>
-          <Route path="/"><DashboardLayout /></Route>
+        {getAuthenticatedUser() && <Route path="/"><DashboardLayout /></Route> }
         </Switch>  
       </ThemeProvider>
     </BrowserRouter>      
