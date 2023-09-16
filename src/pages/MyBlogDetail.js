@@ -201,7 +201,7 @@ export default function MyBlogDetail() {
         <Container>
           
           <Stack direction="row" alignItems="center" spacing={{ xs: 2, sm: 2 }} justifyContent="flex-start" mb={3}>
-            <img onClick={listPost} width={50} src={'/assets/icons/ic_back.png'}></img>
+            <div onClick={listPost} className="back_icon" > </div>
             {EditMode ? 
             <Typography variant="h4" gutterBottom>
               Modifier un article

@@ -14,6 +14,7 @@ import palette from '../../../theme/palette';
 import { useCookies } from 'react-cookie';
 import {AppContext} from '@edx/frontend-platform/react';
 import { useContext } from 'react';
+import { getConfig } from '@edx/frontend-platform';
 
 // ----------------------------------------------------------------------
 
@@ -139,7 +140,7 @@ export default function Header({ onOpenNav }) {
             
 
           >
-          <img width={120} src={'/assets/djezzy_academy.jpg'}></img>
+          <img width={120} src={getConfig().LOGO_URL}></img>
         
         <ButtonGroupItem size="large" sx={{
           display:'flex',

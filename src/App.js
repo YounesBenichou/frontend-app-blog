@@ -11,6 +11,7 @@ import StyledChart from "./components/chart";
 import DashboardLayout from './layouts/dashboard';
 import {  getAuthenticatedUser} from '@edx/frontend-platform/auth';
 import { getConfig } from "@edx/frontend-platform";
+import './index.scss';
 
 function App() {
     useEffect(()=>{

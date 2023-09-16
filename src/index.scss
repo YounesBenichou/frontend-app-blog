@@ -42,3 +42,14 @@ body,
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+
+
+// Djezzy academy
+.back_icon{
+  background: url('../public/assets/icons/ic_back.png');
+  // background: url('');
+  width: 100px;
+  height: 100px;
+  transform: scale(0.5);
+}
